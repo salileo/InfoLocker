@@ -1,0 +1,115 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+	x:Class="DesktopApp.MainWindow"
+	x:Name="Window"
+	Title="MainWindow"
+	Width="640" Height="480">
+
+	<Grid x:Name="LayoutRoot">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		
+		<Grid x:Name="PageHeader" Grid.Row="0">
+			<Rectangle Height="10" VerticalAlignment="Top" Fill="Maroon"/>
+			<Border Margin="10,0,0,0" Height="50" Width="150" HorizontalAlignment="Left" Background="Gray">
+				<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="InfoLocker" FontSize="16" FontWeight="ExtraBold"/>
+			</Border>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,10,0">
+				<Button Content="New Store" Height="20"/>
+				<Button Content="Open Store" Height="20"/>
+				<Button Content=">>" Height="20"/>
+			</StackPanel>
+		</Grid>
+		
+		<Grid x:Name="PageContainer" Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="170"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			
+			<Grid x:Name="PageCategories" Grid.Column="0" Margin="10">
+				<Border Background="LightBlue" Margin="0,25,0,0">
+					<Grid VerticalAlignment="Bottom" Margin="0,30,0,0">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+						
+						<Expander Grid.Row="0" Header="Favorites">
+							<ListView>
+								<ListViewItem Content="fav1"/>
+								<ListViewItem Content="fav2"/>
+								<ListViewItem Content="fav3"/>
+								<ListViewItem Content="fav4"/>
+								<ListViewItem Content="fav5"/>
+								<ListViewItem Content="fav6"/>
+							</ListView>
+						</Expander>
+						<Expander Grid.Row="1" Header="Categories">
+							<ListView>
+								<ListViewItem Content="cat1"/>
+								<ListViewItem Content="cat2"/>
+								<ListViewItem Content="cat3"/>
+								<ListViewItem Content="cat4"/>
+								<ListViewItem Content="cat5"/>
+								<ListViewItem Content="cat6"/>
+							</ListView>
+						</Expander>
+						<Expander Grid.Row="2" Header="Search">
+							<Grid VerticalAlignment="Stretch" Height="200">
+								<Button Content="Search"/>
+							</Grid>
+						</Expander>
+					</Grid>
+				</Border>
+				<Border Height="50" Width="100" HorizontalAlignment="Center" VerticalAlignment="Top" Background="Gray">
+					<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Some Random Store Name" TextWrapping="Wrap"/>
+				</Border>
+			</Grid>
+			
+			<Border Background="Black" Grid.Column="1" Margin="10">
+			<Grid x:Name="PageContent" Margin="1" Background="White">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				
+				<StackPanel Grid.Row="0" Orientation="Horizontal" Height="20">
+					<Button Content="Folder1"/>
+					<TextBlock Text="->"/>
+					<Button Content="Folder2"/>
+					<TextBlock Text="->"/>
+					<Button Content="Folder3"/>
+				</StackPanel>
+				
+				<ToolBar Grid.Row="1">
+					<Button Content="Rename"/>
+					<Button Content="Move"/>
+					<Button Content="Delete"/>
+				</ToolBar>
+				
+				<Grid Grid.Row="2">
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					
+					<TextBlock Grid.Row="0" Text="Some content here"/>
+					<ListView Grid.Row="1">
+						<ListViewItem Content="listItem1"/>
+						<ListViewItem Content="listItem2"/>
+						<ListViewItem Content="listItem3"/>
+						<ListViewItem Content="listItem4"/>
+					</ListView>
+				</Grid>
+			</Grid>
+			</Border>
+		</Grid>
+	</Grid>
+</Window>

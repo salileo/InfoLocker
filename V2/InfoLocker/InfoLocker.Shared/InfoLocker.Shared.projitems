@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>103730cd-e84c-42d3-b2fc-ba823cafd7e4</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>InfoLocker</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CabinetHandle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Encryptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FileSystem\CommonFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FileSystem\CommonFolder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FileSystem\CommonEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FileSystem\OneDriveFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FileSystem\OneDriveFileSystem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FileSystem\OneDriveFolder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FileSystem\StorageFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FileSystem\StorageFolder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Parts\Cabinet.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Parts\Card.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Parts\Folder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Parts\MultiLineEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Parts\Node.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Parts\SingleLineEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ReaderWriter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Settings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Synchronizer.cs" />
+  </ItemGroup>
+</Project>

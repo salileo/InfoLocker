@@ -1,0 +1,68 @@
+﻿<Window x:Class="InfoLocker.StorageProperties"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Storage Properties" SizeToContent="Height" Width="300" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterOwner" KeyDown="KeyPressed">
+    <StackPanel>
+        <GroupBox Header="File Properties" Margin="5,10" BorderBrush="LightBlue">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="File Size"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text=" :    "/>
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2">
+                    <TextBlock Text="{Binding Path=FileSize}"/>
+                    <TextBlock Text=" bytes"/>
+                </StackPanel>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Creation Date"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text=" :    "/>
+                <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Text="{Binding Path=CreationTime}"/>
+                
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Last Modified"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text=" :    "/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Text="{Binding Path=LastWriteTime}"/>
+            </Grid>
+        </GroupBox>
+        
+        <Separator HorizontalAlignment="Stretch"/>
+
+        <Border BorderThickness="1" Margin="5,10" BorderBrush="LightBlue" CornerRadius="2">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="Old Password"/>
+                <PasswordBox Grid.Row="0" Grid.Column="1" Name="OldPassword"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="New Password"/>
+                <PasswordBox Grid.Row="1" Grid.Column="1" Name="NewPassword1"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Confirm Password"/>
+                <PasswordBox Grid.Row="2" Grid.Column="1" Name="NewPassword2"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,15,0,0" TextWrapping="Wrap" Text="(Note: Password should be 8 characters long and you can leave the fields blank to create a non-encrypted store.)"/>
+                <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,10,0,0" HorizontalAlignment="Center" Width="120" Content="Change Password" Click="ChangePassword_Clicked"/>
+            </Grid>
+        </Border>
+    </StackPanel>
+</Window>
